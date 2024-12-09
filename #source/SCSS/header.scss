@@ -44,9 +44,16 @@
 			.header-list__item {
 				.header-list__link {
 					padding: 10px;
-					font-size: 20px;
+					font-size: 18px;
 					font-weight: 400;
 					color: $white;
+					text-decoration-color: $main;
+					transition: all .4s;
+
+					&:hover {
+						text-decoration: underline;
+						text-decoration-color: $main;	
+					}
 				}
 			}
 		}
