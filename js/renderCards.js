@@ -70,4 +70,30 @@ const renderCards = (games) => {
   }); 
 };
 
+const filterCards = () => {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.card-list');
+  let found = false;
+
+  cards.forEach(card => {
+    const title = card.querySelector('.card__title').textContent.toLowerCase();
+    if (title.includes(searchInput)) {
+      card.style.display = '';
+      found = true;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  const noResults = document.getElementById('no-results');
+  noResults.style.display = found ? 'none' : 'block';
+};
+
+document.getElementById('searchButton').addEventListener('click', filterCards);
+document.getElementById('searchInput').addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    filterCards();
+  }
+});
+
 renderCards(games);
