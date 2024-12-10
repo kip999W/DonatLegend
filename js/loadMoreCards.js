@@ -1,24 +1,29 @@
-let isExpanded = false; // Флаг для отслеживания состояния кнопки
-let displayedCards = []; // Массив для хранения показанных карточек
+let isExpanded = false;
+let lastShownCount = 0;
 
-document.getElementById("loadMore").addEventListener("click", () => {
+document.getElementById("loadMore").addEventListener("click", (event) => {
   const hiddenCards = document.querySelectorAll('.card.hidden');
+  const visibleCards = document.querySelectorAll('.card:not(.hidden)');
 
   if (!isExpanded) {
-    for (let i = 0; i < 2 && i < hiddenCards.length; i++) {
+    const cardsToShow = Math.min(2, hiddenCards.length);
+
+    for (let i = 0; i < cardsToShow; i++) {
       hiddenCards[i].classList.remove('hidden');
-      displayedCards.push(hiddenCards[i]);
     }
-        
-    this.innerText = 'Показать меньше';
+
+    lastShownCount += cardsToShow;
+    event.target.innerText = 'Показать меньше';
     isExpanded = true;
   } else {
-    for (let card of displayedCards) {
-      card.classList.add('hidden');
+    const cardsToHide = lastShownCount > 0 ? (lastShownCount < 2 ? lastShownCount : 2) : 0;
+
+    for (let i = 0; i < cardsToHide; i++) {
+      visibleCards[visibleCards.length - 1 - i].classList.add('hidden');
     }
-        
-    displayedCards = [];
-    this.innerText = 'Показать все';
+
+    lastShownCount -= cardsToHide;
+    event.target.innerText = 'Просмотреть все';
     isExpanded = false;
   }
 });
