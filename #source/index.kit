@@ -6,17 +6,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Dona-legend.ru - (Россия) | Внутриигровые валюты и услуги</title>
 
+		<!-- Stylesheets -->
 		<link rel="stylesheet" href="./css/main.css">
 		<link rel="stylesheet" href="./libs/swiper/swiper-bundle.min.css">
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="./image/icons/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./image/icons/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="./image/icons/favicon/favicon-16x16.png">
 		<link rel="manifest" href="./image/icons/favicon/site.webmanifest">
 
+		<!-- Scripts -->
 		<script src="./libs/swiper/swiper-bundle.min.js" defer></script>
 		<script src="./js/app.js" defer></script>
+		<script src="./js/renderCards.js" defer></script>
+		<script src="./js/loadMoreCards.js" defer></script>
+		<script src="./js/smooth-scroll.js" defer></script>
+		<script src="./js/modalController.js" defer></script>
+		<script src="./js/accordionController.js" defer></script>
 	</head>
 	<body>
 		<!-- @import "header.html" -->
@@ -157,6 +165,8 @@
 			        </div>
 			    	</div>
 
+			    	<div id="no-results" style="display: none; color: #fff;">Без результатов</div>
+
 						<div class="btn-container">
 	          	<button type="button" class="btn" id="loadMore">Просмотреть все</button>
 	        	</div>
@@ -164,6 +174,8 @@
 				</div>
 			</section>
 		</main>
+
+		<!-- @import "modal.html" -->
 
 		<!-- @import "footer.html" -->
 	</body>
