@@ -44,24 +44,11 @@
   text-align:center;
 }
 
-.accordion dl,
-.accordion-list {
-  // border:1px solid #ddd;
-  // &:after {
-  //   content: "";
-  //   display:block;
-  //   height:1em;
-  //   width:100%;
-  //   // background-color:darken(#38cc70, 10%);
-  // }
-}
-
 .accordion dd,
 .accordion__panel {
   margin-bottom: 15px;
   background-color: #171718;
   border: 1px solid $main;
-  // border-radius: 25px;
   font-size:1em;
   line-height:1.5em; 
 }
@@ -72,7 +59,6 @@
 
 .accordion {
   position:relative;
-  // background-color:#eee;
 }
 
 .container {
@@ -85,7 +71,6 @@
 .accordion__Heading {
   background-color: #171718;
   border: 1px solid $main;
-  // border-radius: 25px;
   font-weight: 700; 
   padding: 1.5em;
   display: block;
@@ -105,7 +90,6 @@
 
 .accordionTitleActive, 
 .accordionTitle.is-expanded {
-  // background-color:darken(#38cc70, 10%);
   &:before {
     transform:rotate(-225deg);
   }
